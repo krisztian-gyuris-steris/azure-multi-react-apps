@@ -20,6 +20,9 @@
     <ProjectReference Include="..\reactappwithbackend.client\reactappwithbackend.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\reactappwithbackend.pamclient\reactappwithbackend.pamclient.esproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

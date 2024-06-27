@@ -38,12 +38,23 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: './',
     plugins: [plugin()],
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
     },
+    root: process.cwd(),
+    build: {
+        rollupOptions: {
+            output:{
+                assetFileNames: 'assets/pam-[name]-[hash][extname]',
+                chunkFileNames: 'chunks/pam-[name]-[hash].js',
+                entryFileNames: 'entries/pam-[name]-[hash].js'
+            }
+        }
+    }, 
     server: {
         proxy: {
             '^/weatherforecast': {
